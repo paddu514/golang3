@@ -1,0 +1,27 @@
+package funding
+
+type FundServer struct {
+    Commands chan interface{}
+    fund Fund
+}
+
+func NewFundServer(initialBalance int) *FundServer {
+    server := &FundServer{
+        
+        Commands: make(chan interface{}),
+        fund: NewFund(initialBalance),
+    }
+
+  
+    go server.loop()
+    return server
+}
+
+func (s *FundServer) loop() {
+   
+    for command := range s.Commands {
+    
+        
+        
+    }
+}
